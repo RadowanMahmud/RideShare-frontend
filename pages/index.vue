@@ -34,12 +34,20 @@
             padding: 35px;
         ">
           <a
-            href="https://github.com/nuxt/nuxt.js"
+            href="https://github.com/RadowanMahmud/RideShare-Backend.git"
             target="_blank"
             rel="noopener noreferrer"
             class="button--grey"
           >
             Back End
+          </a>
+          <a
+            href="https://github.com/RadowanMahmud/RideShare-frontend.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button--grey"
+          >
+            Front End
           </a>
         </v-row>
       </div>
