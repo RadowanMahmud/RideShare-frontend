@@ -1,30 +1,71 @@
 <template>
-  <div v-if="driver.length > 0" class="container">
-    <h1 class="subtitle">List Of Drivers</h1>
-    <v-data-table
-      style="padding: 50px"
-      :headers="headers"
-      :items="driver"
-      class="elevation-1"
-      align="center"
-    >
-      <template v-slot:item.status="{ item }">
-        <v-chip
-          :color="getColor(item.status)"
-          dark
-        >
-          {{ item.status }}
-        </v-chip>
-      </template>
-      <template v-slot:item.rating="{ item }">
-        <v-rating
-          v-model="item.rating"
-          background-color="purple lighten-3"
-          color="purple"
-          half-increments
-        ></v-rating>
-      </template>
-    </v-data-table>
+  <div v-if="driver.length > 0">
+    <div class="container">
+      <h1 class="subtitle">List Of Drivers</h1>
+      <v-data-table
+        style="padding: 50px"
+        :headers="headers"
+        :items="driver"
+        class="elevation-1"
+        align="center"
+      >
+        <template v-slot:item.status="{ item }">
+          <v-chip
+            :color="getColor(item.status)"
+            dark
+          >
+            {{ item.status }}
+          </v-chip>
+        </template>
+        <template v-slot:item.rating="{ item }">
+          <v-rating
+            v-model="item.rating"
+            background-color="purple lighten-3"
+            color="purple"
+            half-increments
+          ></v-rating>
+        </template>
+      </v-data-table>
+    </div>
+    <v-row
+      style="
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 35px;
+        ">
+      <v-btn
+        outlined
+        color="indigo"
+        style="margin-right: 20px;"
+        large
+      >
+        <NuxtLink to="/">
+          Home
+        </NuxtLink>
+      </v-btn>
+      <v-btn
+        outlined
+        color="indigo"
+        style="margin-right: 20px;"
+        large
+      >
+        <NuxtLink to="/about">
+          About us
+        </NuxtLink>
+      </v-btn>
+      <v-btn
+        class="mx-2"
+        fab
+        dark
+        color="cyan"
+        small
+      >
+        <v-icon dark>
+          mdi-plus
+        </v-icon>
+      </v-btn>
+    </v-row>
   </div>
 </template>
 
@@ -78,7 +119,7 @@ export default {
 }
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
