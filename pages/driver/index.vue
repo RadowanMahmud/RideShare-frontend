@@ -54,17 +54,19 @@
           About us
         </NuxtLink>
       </v-btn>
-      <v-btn
-        class="mx-2"
-        fab
-        dark
-        color="cyan"
-        small
-      >
-        <v-icon dark>
-          mdi-plus
-        </v-icon>
-      </v-btn>
+      <NuxtLink to="/driver/create">
+        <v-btn
+          class="mx-2"
+          fab
+          dark
+          color="cyan"
+          small
+        >
+          <v-icon dark>
+            mdi-plus
+          </v-icon>
+        </v-btn>
+      </NuxtLink>
     </v-row>
   </div>
 </template>
