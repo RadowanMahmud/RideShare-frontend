@@ -1,31 +1,25 @@
 <template>
   <diV>
     <div class="container">
-      <h1 class="subtitle" style="margin-right: 35px">Add New Driver</h1>
+      <h1 class="subtitle" style="margin-right: 35px">Add New Rider</h1>
       <v-form
         ref="form"
-        @submit.prevent="saveDriver"
+        @submit.prevent="saveRider"
       >
         <v-text-field
-          v-model="driver.name"
+          v-model="rider.name"
           label="Name"
         ></v-text-field>
 
         <v-text-field
-          v-model="driver.car"
-          label="Car"
-          required
-        ></v-text-field>
-
-        <v-text-field
-          v-model.number="driver.positionX"
+          v-model.number="rider.positionX"
           label="X axis Co-ordinate"
           required
         >
         </v-text-field>
 
         <v-text-field
-          v-model.number="driver.positionY"
+          v-model.number="rider.positionY"
           label="Y axis Co-ordinate"
           required
         >
@@ -86,30 +80,28 @@ export default {
   name: "index",
   data(){
     return{
-      driver:{
+      rider:{
         name: '',
-        car: '',
         positionX: null,
         positionY: null,
-        rating: 5,
+        rating: 0,
       }
     }
   },
   methods:{
     resetForm(){
-        this.driver.name = ''
-        this.driver.car =''
-        this.driver.positionX = null
-        this.driver.positionY = null
+        this.rider.name = ''
+        this.rider.positionX = null
+        this.rider.positionY = null
     },
-    saveDriver(){
+    saveRider(){
       console.log("calling")
-      if(this.driver.name === '' || this.driver.car==='' || this.driver.positionX===null || this.driver.positionY===null){
+      if(this.rider.name === '' || this.rider.positionX===null || this.rider.positionY===null){
           alert('Please Submit All Informations')
       }
       else{
-        this.$axios.post('/driver/add', this.driver).then((response)=>{
-            this.$router.push('/driver')
+        this.$axios.post('/rider/add', this.rider).then((response)=>{
+            this.$router.push('/rider')
         })
       }
     },

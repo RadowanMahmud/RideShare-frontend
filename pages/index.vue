@@ -18,7 +18,7 @@
           Driver
         </a>
         <a
-          href="about"
+          href="rider"
           class="button--green"
         >
           Rider
