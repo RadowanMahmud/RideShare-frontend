@@ -25,7 +25,7 @@
       >
         <v-tab
           v-for="item in items"
-          :key="item"
+          :key="item.name"
         >
           {{ item.name }}
         </v-tab>
@@ -34,7 +34,7 @@
       <v-tabs-items v-model="tab">
         <v-tab-item
           v-for="item in items"
-          :key="item"
+          :key="item.name"
         >
           <v-card
             color="basil"
