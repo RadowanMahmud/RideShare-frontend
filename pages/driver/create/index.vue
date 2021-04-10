@@ -7,17 +7,20 @@
         @submit.prevent="saveDriver"
       >
         <v-text-field
+          id="name"
           v-model="driver.name"
           label="Name"
         ></v-text-field>
 
         <v-text-field
+          id="car"
           v-model="driver.car"
           label="Car"
           required
         ></v-text-field>
 
         <v-text-field
+          id="posx"
           v-model.number="driver.positionX"
           label="X axis Co-ordinate"
           required
@@ -25,6 +28,7 @@
         </v-text-field>
 
         <v-text-field
+          id="posy"
           v-model.number="driver.positionY"
           label="Y axis Co-ordinate"
           required

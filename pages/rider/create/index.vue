@@ -7,6 +7,7 @@
         @submit.prevent="saveRider"
       >
         <v-text-field
+          id="ridername"
           v-model="rider.name"
           label="Name"
         ></v-text-field>
@@ -19,6 +20,7 @@
         </v-text-field>
 
         <v-text-field
+          id="riderpox"
           v-model.number="rider.positionY"
           label="Y axis Co-ordinate"
           required
@@ -26,6 +28,7 @@
         </v-text-field>
 
         <v-btn
+          id="riderpoy"
           outlined
           class="mr-4"
           color="#177420"
