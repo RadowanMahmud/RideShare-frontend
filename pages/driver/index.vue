@@ -25,6 +25,15 @@
             half-increments
           ></v-rating>
         </template>
+        <template v-slot:item.action="{ item }">
+              <tr>
+                <td>
+                  <v-btn class="mx-2" fab dark small color="#9F2610" style="padding: 2px" @click="deleteDriver(item._id)">
+                    <v-icon dark>mdi-delete</v-icon>
+                  </v-btn>
+                </td>
+              </tr>
+        </template>
       </v-data-table>
     </div>
     <v-row
@@ -76,7 +85,10 @@ export default {
   name: "index",
   data(){
     return{
-     driver: [],
+      driver: [],
+      deletedriverForm: {
+        id: '',
+      },
       headers: [
         {
           text: 'Name',
@@ -89,6 +101,7 @@ export default {
         { text: 'Y co-ordinate', value: 'positionY' },
         { text: 'Status', value: 'status' },
         { text: 'Rating', value: 'rating' },
+        { text: 'Action', value: 'action' },
       ],
     }
   },
@@ -104,9 +117,14 @@ export default {
       console.log('fetiching')
       this.$axios.get('/driver/fetch').then((response)=>{
         this.driver = response.data
-        console.log(this.driver)
       })
-    }
+    },
+    deleteDriver(id){
+        this.deletedriverForm.id = id
+        this.$axios.post('/driver/delete', this.deletedriverForm ).then((response)=>{
+          this.fetchDriver()
+        })
+    },
   },
 }
 </script>
